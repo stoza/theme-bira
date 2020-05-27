@@ -65,6 +65,14 @@ function __bobthefish_timestamp -S -d 'Show the current timestamp'
     date $theme_date_format
 end
 
+function __vpn_status -S -d 'Show the current vpn status'
+	set result (cyberghostvpn --status)
+	if [ "$result" = "VPN connections found." ]
+		set_color green
+	end
+	echo "VPN"
+end
+
 function fish_right_prompt -d 'bobthefish is all about the right prompt'
     set -l __bobthefish_left_arrow_glyph \uE0B3
     if [ "$theme_powerline_fonts" = "no" ]
@@ -75,5 +83,7 @@ function fish_right_prompt -d 'bobthefish is all about the right prompt'
 
     __bobthefish_cmd_duration
     __bobthefish_timestamp
+    echo -n " "
+    __vpn_status
     set_color normal
 end

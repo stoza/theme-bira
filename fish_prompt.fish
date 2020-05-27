@@ -1,6 +1,8 @@
 # Theme based on Bira theme from oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/bira.zsh-theme
 # Some code stolen from oh-my-fish clearance theme: https://github.com/bpinto/oh-my-fish/blob/master/themes/clearance/
 
+#export the path to have groot
+set -x COWPATH ~/.cowsay
 
 #alias
 alias python="python3.7"
